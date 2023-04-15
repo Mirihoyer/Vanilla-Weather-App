@@ -23,15 +23,21 @@ li {
 .weatherContainer {
     max-width: 600px;
     margin: 30px auto;
+    
 }
 
 .weatherApp {
-
+background-color: rgba(226, 225, 225, 0.5);
     padding: 20px;
     border: 1px solid gray;
     border-radius: 20px;
 }
 
+.weatherTemperature img {
+    margin: 0 10px 30px;
+    height: 100px;
+    width: 100px;
+  }
 .weatherTemperature strong {
     font-size: 66px;
     font-weight: 400;
