@@ -30,7 +30,8 @@ function formatDate(timestamp) {
 function displayTemperature(response) {
 
     let temperatureElement = document.querySelector("#temperature");
-    temperatureElement.innerHTML = Math.round(response.data.temperature.current);
+    temperatureElement.innerHTML = Math.round(celsTemp);
+    celsTemp = response.data.temperature.current;
     let cityElement = document.querySelector("#city");
     cityElement.innerHTML = response.data.city;
     let description = document.querySelector("#description");
@@ -43,6 +44,7 @@ function displayTemperature(response) {
     windElement.innerHTML = Math.round(response.data.wind.speed);
     let dateElement = document.querySelector("#date");
     dateElement.innerHTML = formatDate(response.data.time * 1000);
+   
 }
 
 function search(city) {
@@ -57,8 +59,32 @@ function updateCity(event) {
     search(cityInput.value);
 
 }
+search("Buenos Aires");
+
+function displayFahrTemp(event) {
+    event.preventDefault();
+    let temperatureElement = document.querySelector("#temperature");
+    celsLink.classList.remove("active");
+    fahrLink.classList.add("active");
+    let fahrTemp = (celsTemp * 9) / 5 + 32;
+     temperatureElement.innerHTML = Math.round(fahrTemp); 
+}
+
+function displayCelsTemp(event) {
+    event.preventDefault();
+    let temperatureElement = document.querySelector("#temperature");
+    celsLink.classList.add("active");
+    fahrLink.classList.remove("active");
+temperatureElement.innerHTML = Math.round(celsTemp);
+}
+
+let celsTemp = null;
 
 let form = document.querySelector("#searchForm");
 form.addEventListener("submit", updateCity);
 
-search("Paris");
+let fahrLink = document.querySelector("#fahrLink");
+fahrLink.addEventListener("click", displayFahrTemp);
+
+let celsLink = document.querySelector("#celsLink");
+celsLink.addEventListener("click", displayCelsTemp);

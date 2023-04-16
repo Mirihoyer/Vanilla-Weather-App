@@ -19,13 +19,13 @@
 
                 <form action="" id="searchForm">
                     <div class="row">
-                        <div class="col-8">
+                        <div class="col-9">
                             <input type="text" class="form-control" id="cityInput" placeholder="Enter a city here..."
                                 aria-label="city" aria-describedby="button-addon2">
                         </div>
-                        <div class="col-4">
+                        <div class="col-3">
                         <button class="btn btn-outline-info" type="submit">Search</button>
-                        <button class="btn btn-outline-secondary" type="submit" id="location">Current</button>
+                       <!--<button class="btn btn-outline-secondary" type="submit" id="location">dont touch</button>--> 
                     </div>
                     </div>
                 </form>
@@ -44,7 +44,7 @@
                         <div class="weatherTemperature">
                             <img id="icon"
                                 src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png">
-                            <strong id="temperature">12</strong> <span class="units">°C/ F</span>
+                            <strong id="temperature">12</strong> <span class="units"><a href="#" id="celsLink" class="active">°C</a> / <a href="#" id="fahrLink">°F</a> </span>
                         </div>
                     </div>
                     <div class="col-6">

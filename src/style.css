@@ -48,3 +48,14 @@ background-color: rgba(226, 225, 225, 0.5);
     font-size: 15px;
     top: -34px;
 }
+
+.weatherTemperature .active {
+    color: black;
+    cursor: default;
+
+}
+
+.weatherTemperature .active:hover {
+    text-decoration: none;
+
+}
