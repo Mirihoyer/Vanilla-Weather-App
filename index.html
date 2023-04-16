@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,900;1,900&family=Shantell+Sans:wght@300&display=swap" rel="stylesheet">
     <title>V-WeatherApp</title>
 </head>
 
@@ -19,18 +22,18 @@
 
                 <form action="" id="searchForm">
                     <div class="row">
-                        <div class="col-9">
-                            <input type="text" class="form-control" id="cityInput" placeholder="Enter a city here..."
+                        <div class="col-10">
+                            <input type="text" class="form-control border border-white bg-opacity-10 rounded-pill" id="cityInput" placeholder="Enter a city here..."
                                 aria-label="city" aria-describedby="button-addon2">
                         </div>
-                        <div class="col-3">
-                        <button class="btn btn-outline-info" type="submit">Search</button>
+                        <div class="col-2">
+                        <button class="btn btn-light rounded-pill" type="submit">Search</button>
                        <!--<button class="btn btn-outline-secondary" type="submit" id="location">dont touch</button>--> 
                     </div>
                     </div>
                 </form>
 
-                <h1 id="city">Buenos Aires</h1>
+                <h1 class="h1" id="city">City</h1>
                 <ul>
                     <li id="date">
 

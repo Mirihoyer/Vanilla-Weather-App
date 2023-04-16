@@ -30,21 +30,21 @@ function formatDate(timestamp) {
 function displayTemperature(response) {
 
     let temperatureElement = document.querySelector("#temperature");
+    let cityElement = document.querySelector("#city");
+    let description = document.querySelector("#description");
+    let temperatureIcon = document.querySelector("#icon");
+    let humidityElement = document.querySelector("#humidity");
+    let windElement = document.querySelector("#wind");
+    let dateElement = document.querySelector("#date");
+
     temperatureElement.innerHTML = Math.round(celsTemp);
     celsTemp = response.data.temperature.current;
-    let cityElement = document.querySelector("#city");
     cityElement.innerHTML = response.data.city;
-    let description = document.querySelector("#description");
     description.innerHTML = response.data.condition.description;
-    let temperatureIcon = document.querySelector("#icon");
     temperatureIcon.src = response.data.condition.icon_url;
-    let humidityElement = document.querySelector("#humidity");
     humidityElement.innerHTML = response.data.temperature.humidity;
-    let windElement = document.querySelector("#wind");
     windElement.innerHTML = Math.round(response.data.wind.speed);
-    let dateElement = document.querySelector("#date");
     dateElement.innerHTML = formatDate(response.data.time * 1000);
-   
 }
 
 function search(city) {
@@ -67,7 +67,7 @@ function displayFahrTemp(event) {
     celsLink.classList.remove("active");
     fahrLink.classList.add("active");
     let fahrTemp = (celsTemp * 9) / 5 + 32;
-     temperatureElement.innerHTML = Math.round(fahrTemp); 
+    temperatureElement.innerHTML = Math.round(fahrTemp);
 }
 
 function displayCelsTemp(event) {
@@ -75,7 +75,7 @@ function displayCelsTemp(event) {
     let temperatureElement = document.querySelector("#temperature");
     celsLink.classList.add("active");
     fahrLink.classList.remove("active");
-temperatureElement.innerHTML = Math.round(celsTemp);
+    temperatureElement.innerHTML = Math.round(celsTemp);
 }
 
 let celsTemp = null;
