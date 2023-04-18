@@ -10,8 +10,10 @@
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,900;1,900&family=Shantell+Sans:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,900;1,900&family=Shantell+Sans:wght@300&display=swap"
+        rel="stylesheet">
     <title>V-WeatherApp</title>
 </head>
 
@@ -23,13 +25,14 @@
                 <form action="" id="searchForm">
                     <div class="row">
                         <div class="col-10">
-                            <input type="text" class="form-control border border-white bg-opacity-10 rounded-pill" id="cityInput" placeholder="Enter a city here..."
-                                aria-label="city" aria-describedby="button-addon2">
+                            <input type="text" class="form-control border border-white bg-opacity-10 rounded-pill"
+                                id="cityInput" placeholder="Enter a city here..." aria-label="city"
+                                aria-describedby="button-addon2">
                         </div>
                         <div class="col-2">
-                        <button class="btn btn-light rounded-pill" type="submit">Search</button>
-                       <!--<button class="btn btn-outline-secondary" type="submit" id="location">dont touch</button>--> 
-                    </div>
+                            <button class="btn btn-light rounded-pill" type="submit">Search</button>
+                            <!--<button class="btn btn-outline-secondary" type="submit" id="location">dont touch</button>-->
+                        </div>
                     </div>
                 </form>
 
@@ -47,7 +50,8 @@
                         <div class="weatherTemperature">
                             <img id="icon"
                                 src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png">
-                            <strong id="temperature">12</strong> <span class="units"><a href="#" id="celsLink" class="active">°C</a> / <a href="#" id="fahrLink">°F</a> </span>
+                            <strong id="temperature">12</strong> <span class="units"><a href="#" id="celsLink"
+                                    class="active">°C</a> / <a href="#" id="fahrLink">°F</a> </span>
                         </div>
                     </div>
                     <div class="col-6">
@@ -65,6 +69,7 @@
 
                     </div>
                 </div>
+                <div class="forecast" id="forecast"> </div>
             </div>
             <small>
                 <a href="https://github.com/Mirihoyer/Vanilla-Weather-App.git" target="_blank">Open-Source code</a> by

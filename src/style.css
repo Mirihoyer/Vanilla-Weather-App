@@ -103,3 +103,23 @@ li {
     text-decoration: none;
 
 }
+
+.forecast {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.forecastDate {
+    font-size: 15px;
+    color: whitesmoke;
+    text-align: center;
+}
+
+.forecastTemp {
+    color: whitesmoke;
+    text-align: center;
+}
+
+.tempMin {
+    opacity: 0.6;
+}
