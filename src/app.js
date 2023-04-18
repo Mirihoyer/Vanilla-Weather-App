@@ -118,9 +118,10 @@ function updateCity(event) {
     search(cityInput.value);
 
 }
-search("Buenos Aires");
 
-function displayFahrTemp(event) {
+let celsTemp = null;
+
+/*function displayFahrTemp(event) {
     event.preventDefault();
     let temperatureElement = document.querySelector("#temperature");
     celsLink.classList.remove("active");
@@ -135,17 +136,19 @@ function displayCelsTemp(event) {
     celsLink.classList.add("active");
     fahrLink.classList.remove("active");
     temperatureElement.innerHTML = Math.round(celsTemp);
-}
+}*/
 
-let celsTemp = null;
+
 
 
 
 let form = document.querySelector("#searchForm");
 form.addEventListener("submit", updateCity);
 
-let fahrLink = document.querySelector("#fahrLink");
-fahrLink.addEventListener("click", displayFahrTemp);
+//let fahrLink = document.querySelector("#fahrLink");
+//fahrLink.addEventListener("click", displayFahrTemp);
 
-let celsLink = document.querySelector("#celsLink");
-celsLink.addEventListener("click", displayCelsTemp);
+//let celsLink = document.querySelector("#celsLink");
+//celsLink.addEventListener("click", displayCelsTemp);
+
+search("Buenos Aires");
