@@ -25,42 +25,59 @@ function formatDate(timestamp) {
     return `${day} ${hour}:${minute}hs`;
 };
 
+function formatDay(timestamp) {
+let date = new Date(timestamp * 1000);
+let day = date.getDay();
+let days = [
+    "Sun",
+    "Mon",
+    "Tue",
+    "Wed",
+    "Thu",
+    "Fri",
+    "Sat"
+];
+return  days[day];
+}
+
 function displayForecast(response) {
-    console.log(response.data.daily);
+
+    let forecast = response.data.daily;
+
     let forecastElement = document.querySelector("#forecast");
 
     let forecastHTML = `<div class="row"> `;
-    let days = ["thu", "Fri", "Sat", "sun", "mon"];
-    days.forEach(function (day) {
-        forecastHTML = forecastHTML + ` 
-    
-        <div class="col-2">
+
+
+    forecast.forEach(function (forecastDay, index) {
+        if (index < 6) {
+        forecastHTML =
+            forecastHTML +
+            ` 
+            <div class="col-2">
             <div class="forecastDate">
-                ${day}
+                ${formatDay(forecastDay.time)}
             </div>
             <img width="80px"
-                src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/few-clouds-day.png"
+                src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${forecastDay.condition.icon}.png"
                 alt="">
             <div class="forecastTemp">
-                <span class="tempMax">
-                    18
+                <span class="tempMax">${Math.round(forecastDay.temperature.maximum)}°
                 </span>
                 <span class="tempMin">
-                    12
+                ${Math.round(forecastDay.temperature.minimum)}°
                 </span>
             </div>
-
         </div>
-    
-`
-    })
-        ;
+    `;
+   } }); 
     forecastHTML = forecastHTML + `</div> `;
     forecastElement.innerHTML = forecastHTML;
+    
 }
 
 function getForecast(coordinates) {
-    
+
     let apiKey = "cb65f87d0t540475bab893o006f70dfb";
     let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=metric`;
 
